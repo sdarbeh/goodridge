@@ -11,7 +11,6 @@ import * as serviceWorker from './serviceWorker';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './graphql'
 
-
 ReactDOM.render(
   <ApolloProvider client={client}>
     <ReduxProvider store={store}>
