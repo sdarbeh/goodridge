@@ -1,0 +1,5 @@
+export { default as fontSize } from './fontSizeReducer'
+export { default as theme } from './themeReducer'
+export { default as archive } from './archiveReducer'
+export { default as admin } from './adminReducer'
+export { default as likedProjects } from './likedProjectsReducer'

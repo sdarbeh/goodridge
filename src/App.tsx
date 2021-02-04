@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { appRoutes } from './utils/routes'
 
-function App() {
+import { ContactRoute } from './gaurds'
+// client
+import { Home, Archive, Project, Contact, Socials, Message } from './screens/client'
+// admin
+// import { Login, Dashboard, Site, Projects, Messages } from './screens/admin'
+import { NotFoundScreen } from './screens/common'
+
+export default () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path={appRoutes.home} exact component={Home} />
+        <Route path={appRoutes.archive} exact component={Archive} />
+        <Route path={appRoutes.archive + '/:name'} exact component={Project} />
+        <ContactRoute path={appRoutes.contact} exact component={Contact} />
+        <Route path={appRoutes.contact + '/:id'} exact component={Message} />
+        <Route path={appRoutes.socials} exact component={Socials} />
+
+        {/* <AdminRoute path={adminRoutes.admin} logginRoute exact component={Login} />
+        <AdminRoute path={adminRoutes.dashboard} exact component={Dashboard} />
+        <AdminRoute path={adminRoutes.site} exact component={Site} />
+        <AdminRoute path={adminRoutes.projects} exact component={Projects} />
+        <AdminRoute path={adminRoutes.messages} exact component={Messages} /> */}
+        <Route path={'*'} component={NotFoundScreen} />
+      </Switch>
+    </Router>
   );
 }
-
-export default App;

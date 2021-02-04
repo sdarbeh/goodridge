@@ -1,0 +1,93 @@
+// .carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+
+// }
+
+// .carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
+//   border-width: 0 2px 2px 0;
+//   content: unset;
+//   border-top: unset;
+//   border-bottom: unset;
+// }
+
+// .carousel .control-prev.control-arrow:before {
+
+// }
+// .carousel .control-next.control-arrow:before {
+
+// }
+
+.slider-wrapper {
+  max-height: 350px;
+}
+
+.carousel {
+  // Slides
+  &.carousel-slider {
+    // border-radius: 20px;
+    overflow: hidden;
+    .control-arrow:hover {
+      background: transparent;
+      &:after {
+        color: #f2f2f2;
+      }
+    }
+  }
+  // Control arrows
+  &, &.carousel-slider {
+    .control-arrow {
+      padding: 0 10px;
+      &:before {
+        margin: 0;
+      }
+      &:after {
+        transform: rotate(-40deg);
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-right-style: solid;
+        border-right-width: 2px;
+        content: '';
+        display: inline-block;
+        height: 12px;
+        width: 12px;
+        color: rgba(255, 255, 255, .1);
+      }
+    }
+  }
+  & .control-prev.control-arrow {
+    &:before {
+      border-right: unset;
+    }
+    &:after {
+      transform: rotate(135deg);
+    }
+  }
+  & .control-next.control-arrow {
+    &:before {
+      border-left: unset;
+    }
+  }
+  // Thumbnail
+  .thumb {
+    height: 50px;
+    margin-right: 6px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: unset;
+    &.thumb.selected {
+      border: 2px solid #f2f2f2;
+    }
+    &:hover, &:focus {
+      border: 2px solid #333333;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  img {
+    vertical-align: middle;
+    // border-radius: 10px;
+    height: 100%;
+  }
+}

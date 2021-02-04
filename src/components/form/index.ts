@@ -1,0 +1,5 @@
+export { default as Input } from './Input/Input'
+export { default as PasswordInput } from './PasswordInput/PasswordInput'
+export { default as ErrMsg } from './ErrMsg/ErrMsg'
+export { default as FormButton } from './FormButton/FormButton'
+export { default as SubmitError } from './SubmitError/SubmitError'
