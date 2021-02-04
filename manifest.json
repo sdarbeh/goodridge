@@ -1,0 +1,26 @@
+{
+  "short_name": "Goodridge Portfolio",
+  "name": "Goodridge Portfolio",
+  "icons": [
+    {
+      "src": "assets/logo/moji_s.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "assets/logo/moji_m.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/logo/moji_l.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
