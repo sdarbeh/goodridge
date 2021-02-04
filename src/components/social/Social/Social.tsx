@@ -13,10 +13,17 @@ interface p {
 
 export default ({ social, ...rest }: p) => {
   const ref = useRef<any>();
+  const [err, setErr] = useState(false)
   const [color, setColor] = useState<any>({
     primary: null,
     opacity: null
   })
+
+  const socialUrl = socialImgUrl(social.name)
+  const img = {
+    valid: social.image_url || socialUrl,
+    src: social.image_url ? social.image_url : socialUrl
+  }
 
   const handleImgLoad = () => {
     setColor({
@@ -24,19 +31,22 @@ export default ({ social, ...rest }: p) => {
       opacity: getColor(ref.current, .1)
     })
   }
-  
+
   return (
     <Container {...rest} color={color}>
       <LinkButton to={social.website} newTab>
-        <CenterDiv>
-          <img 
-            src={social.image_url ? social.image_url : socialImgUrl(social.name)} 
-            alt={social.name}
-            crossOrigin={'anonymous'}
-            ref={ref}
-            onLoad={handleImgLoad}
-          />
-        </CenterDiv>
+        {img.valid && !err && (
+          <CenterDiv>
+            <img
+              src={img.src}
+              alt={social.name}
+              crossOrigin={'anonymous'}
+              ref={ref}
+              onLoad={handleImgLoad}
+              onError={() => setErr(true)}
+            />
+          </CenterDiv>
+        )}
         <span>{social.name}</span>
       </LinkButton>
     </Container>

@@ -3,7 +3,7 @@ import { mobile } from './mobile'
 import { database } from './database'
 import { backend } from './backend'
 
-import { questionIcon } from '../icons/widgets'
+import { question_image } from '../public'
 
 const languages = [
   ...frontend,
@@ -12,13 +12,9 @@ const languages = [
   ...backend
 ]
 
-export const languageIcon = (language: string) => {
-  return questionIcon
-}
-
 export const languageUrl = (language: string) => {
   language = language.toLowerCase()
-  let src;
+  let src = question_image;
   languages.forEach((s:any) => {
     if (language === s.name) {
       src = s.src

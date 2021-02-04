@@ -3,6 +3,9 @@ import { preloadImages } from '../../utils/helpers/methods'
 const assets = '/assets'
 
 export const fav_icon = `${assets}/logo/moji_m.png`
+export const test_image = '/assets/media/test/test_image.png'
+export const like_animation_image = '/assets/media/animation/web_heart_animation.png'
+export const question_image = '/assets/media/error/question-icon.png'
 
 export const moji_loaders = [
     {
@@ -60,9 +63,6 @@ export const moji_selfies = [
         src: '/assets/mojis/selfie/moji_smile.png'
     },
 ]
-
-export const test_image = '/assets/media/test/test_image.png'
-export const like_animation_image = '/assets/media/animation/web_heart_animation.png'
 
 export const preloadMojies = () => {
     let arr = []

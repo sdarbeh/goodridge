@@ -8,7 +8,7 @@ interface p {
 export const Container = styled.div`
   height: 60px;
   button {
-    border: 1px solid ${(p:p) => p.color ? p.color.primary : p.theme.bravo};
+    border: 1px solid ${(p:p) => p.color.primary ? p.color.primary : p.theme.currentThemeColor};
     box-shadow: ${props => props.theme.btnShadow};
     padding: 12px 12px;
     width: 100%;
@@ -16,7 +16,7 @@ export const Container = styled.div`
     border-radius: 5px;
     position: relative;
     &:hover {
-      background-color: ${(p:p) => p.color ? p.color.opacity : p.theme.bravo};
+      background-color: ${(p:p) => p.color.opacity ? p.color.opacity : p.theme.currentThemeColorHover};
     }
   }
   span {

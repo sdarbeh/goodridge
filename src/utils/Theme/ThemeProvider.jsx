@@ -21,7 +21,6 @@ export default ({ children }) => {
   }
 
   // theme and global styling is passed in styled props
-
   const appTheme = {
     ...themeModeColors[currentThemeMode],
     ...rest

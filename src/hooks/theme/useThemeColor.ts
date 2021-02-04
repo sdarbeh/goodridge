@@ -35,7 +35,7 @@ export default () => {
   return {
     // ------- theme color
     isThemeColorDefault: themeColor === defaultThemeColor(),
-    themeColors: themeColors,
+    themeColors,
     themeColorsArray: getThemeColorsArray(),
     // theme colors for components not styled with styled components
     // see src/utils/Theme
